@@ -1471,7 +1471,7 @@ export default function StudentPortal({ student, onExit }) {
           </div>
 
           <div className="flex items-center gap-8">
-            <button onClick={() => { setActivePage("home"); setCollegeDropdown(false); setProfileDropdown(false); }} className="text-sm font-semibold text-white hover:opacity-80 transition-opacity">HOME</button>
+            <button onClick={() => { setActivePage("home"); setSelectedCollege(null); setCollegeDropdown(false); setProfileDropdown(false); }} className="text-sm font-semibold text-white hover:opacity-80 transition-opacity">HOME</button>
 
             {/* Colleges dropdown */}
             <div className="relative">
@@ -1481,14 +1481,14 @@ export default function StudentPortal({ student, onExit }) {
               {collegeDropdown && (
                 <div className="absolute top-8 left-0 w-48 bg-white rounded-lg shadow-lg py-1 z-50" style={{ border: "1px solid #e5e0f0" }}>
                   {[{ id: "college-search", label: "College Search" }, { id: "college-list", label: "College List" }, { id: "compare", label: "Compare Colleges" }].map(item => (
-                    <button key={item.id} onClick={() => { setActivePage(item.id); setCollegeDropdown(false); }} className="w-full text-left px-4 py-2 text-sm hover:bg-gray-50" style={{ color: "#474747" }}>{item.label}</button>
+                    <button key={item.id} onClick={() => { setActivePage(item.id); setSelectedCollege(null); setCollegeDropdown(false); }} className="w-full text-left px-4 py-2 text-sm hover:bg-gray-50" style={{ color: "#474747" }}>{item.label}</button>
                   ))}
                 </div>
               )}
             </div>
 
-            <button onClick={() => { setActivePage("resources"); setCollegeDropdown(false); setProfileDropdown(false); }} className="text-sm font-semibold text-white hover:opacity-80 transition-opacity" style={{ textDecoration: activePage === "resources" ? "underline" : "none" }}>RESOURCES</button>
-            <button onClick={() => { setActivePage("scheduling"); setCollegeDropdown(false); setProfileDropdown(false); }} className="text-sm font-semibold text-white hover:opacity-80 transition-opacity" style={{ textDecoration: activePage === "scheduling" ? "underline" : "none" }}>SCHEDULING</button>
+            <button onClick={() => { setActivePage("resources"); setSelectedCollege(null); setCollegeDropdown(false); setProfileDropdown(false); }} className="text-sm font-semibold text-white hover:opacity-80 transition-opacity" style={{ textDecoration: activePage === "resources" ? "underline" : "none" }}>RESOURCES</button>
+            <button onClick={() => { setActivePage("scheduling"); setSelectedCollege(null); setCollegeDropdown(false); setProfileDropdown(false); }} className="text-sm font-semibold text-white hover:opacity-80 transition-opacity" style={{ textDecoration: activePage === "scheduling" ? "underline" : "none" }}>SCHEDULING</button>
           </div>
 
           {/* Profile dropdown */}
@@ -1506,7 +1506,7 @@ export default function StudentPortal({ student, onExit }) {
             {profileDropdown && (
               <div className="absolute top-12 right-0 w-48 bg-white rounded-lg shadow-lg py-1 z-50" style={{ border: "1px solid #e5e0f0" }}>
                 {[{ id: "profile", label: "Profile" }, { id: "edit-profile", label: "Edit Profile" }].map(item => (
-                  <button key={item.id} onClick={() => { setActivePage(item.id); setProfileDropdown(false); }} className="w-full text-left px-4 py-2 text-sm hover:bg-gray-50" style={{ color: "#474747" }}>{item.label}</button>
+                  <button key={item.id} onClick={() => { setActivePage(item.id); setSelectedCollege(null); setProfileDropdown(false); }} className="w-full text-left px-4 py-2 text-sm hover:bg-gray-50" style={{ color: "#474747" }}>{item.label}</button>
                 ))}
                 <div style={{ borderTop: "1px solid #e5e0f0" }}>
                   <button className="w-full text-left px-4 py-2 text-sm hover:bg-gray-50" style={{ color: "#474747" }}>Change Password</button>
