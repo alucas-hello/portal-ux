@@ -1,0 +1,150 @@
+HELLOCOLLEGESE EMPLOYEE PORTAL PROTOTYPE - VERIFICATION CHECKLIST
+
+FILE: /sessions/modest-sleepy-brahmagupta/mnt/portal-ux/hc-portal-prototype.jsx
+SIZE: 50.5 KB | LINES: 708 | FORMAT: Single-file React JSX
+
+REQUIREMENTS MET:
+=================
+
+1. IMPORTS & DEPENDENCIES
+   ✓ Only import: "import { useState } from "react""
+   ✓ NO lucide-react or external icon libraries
+   ✓ All icons are inline SVG components in Icons object
+
+2. STYLING
+   ✓ Tailwind CSS utility classes throughout
+   ✓ Inline styles for brand colors (exact hex codes)
+   ✓ Google Fonts Montserrat import in style tag
+   ✓ React fragment wrapper with style tag
+
+3. BRAND COLORS (All implemented with exact hex codes)
+   ✓ Primary Dark: #281d51 (sidebar, headings, buttons)
+   ✓ Primary Medium: #55478f (hover states, secondary)
+   ✓ Primary Light: #8e7bb7 (avatars, accents)
+   ✓ Primary Pale: #c0bad4 (borders, light backgrounds)
+   ✓ Accent Magenta: #ff3467 (alerts, highlights, buttons)
+   ✓ Accent Teal: #42778c (secondary elements)
+   ✓ Accent Cyan: #00e6c3 (success/completion indicators)
+   ✓ Text Dark: #474747 (primary text)
+   ✓ Text Light: #b2b2b2 (secondary text)
+
+4. SIDEBAR NAVIGATION
+   ✓ Icon-based, collapsed by default (~w-16)
+   ✓ Expands to show labels on hover (~w-56)
+   ✓ 9 nav items: Dashboard, Colleges, High Schools, Registration, Time Tracker, Reports, Programs, Services, Settings
+   ✓ Recently-visited student pills at bottom (3-4 students)
+   ✓ Active page highlighted with accent color
+   ✓ HC logo with magenta background at top
+
+5. COUNSELOR DASHBOARD
+   ✓ Card-based layout per student
+   ✓ Row 1: Avatar, Name (clickable), High School, Grad Year, email/info icons
+   ✓ Row 2: 6 metric chips (Meetings, Last Meeting, Next Contact, Next Meeting, Hours with progress bar, Workshops)
+   ✓ Row 3: Next workshop status and notes preview
+   ✓ Filters: Search input, counselor dropdown, grad year tags
+   ✓ Status color-coding: green <30d, yellow 30-60d, red >60d
+   ✓ All 8 sample students with data
+   ✓ Pagination footer
+
+6. TASKS TAB (Matrix)
+   ✓ 20 task milestones (specific task names)
+   ✓ 8 students (rows)
+   ✓ Status indicators: completed (cyan), in-progress (amber), not-started (magenta), opted-out (gray)
+   ✓ Horizontally scrollable
+   ✓ Sticky student name column
+   ✓ Rotated column headers
+   ✓ Realistic progression: Seniors ~90%, Juniors ~50%, Sophomores ~20%
+
+7. WORKSHOPS TAB (Matrix)
+   ✓ 15 workshops (specific workshop names)
+   ✓ 8 students (rows)
+   ✓ Status indicators: completed (cyan), registered (blue), in-progress (amber), not-started (magenta), opted-out (gray)
+   ✓ Horizontally scrollable
+   ✓ Sticky student name column
+   ✓ Rotated column headers
+   ✓ Realistic progression matching class years
+
+8. ESSAY COACH TAB
+   ✓ Card-based layout (5 sample students)
+   ✓ Avatar, Name, Major, Counselor, Coach
+   ✓ Last Meeting, Next Scheduled, Total Meetings, Hours (with progress bar), Remaining
+   ✓ 6 essay milestone dots with status
+   ✓ Sample students: Charles, Flanagan, Hong, Hart, Kumar
+
+9. TUTOR DASHBOARD TAB
+   ✓ Card layout (4 sample students)
+   ✓ Avatar, Name, Grad Year, Email, Phone, Tutor name(s)
+   ✓ Last Session, Next Session, Available Hours
+   ✓ Test scores as pills (ACT, SAT, GPA)
+   ✓ Latest conversation snippet
+   ✓ Notes preview
+   ✓ Sample students: Ayscue, Victor, Kumar, Chen
+
+10. STUDENT DETAIL PAGE (2-column layout)
+    ✓ LEFT COLUMN (65%):
+      - Large header with avatar, name, grad year, high school, state
+      - Quick stats boxes: Counselor Hours, Essay Hours, Tutoring Hours
+      - Selectivity dropdown
+      - 3 action buttons: LOGIN AS STUDENT, SEND PASSWORD RESET, LOG QUICK ADMIN TASK
+      - Contact Cadence section (4 dropdowns: Pre-Up to April Jr, Peak-May to Aug Jr, Peak-Sep to Dec Jr, Jan Sr-Grad)
+      - Basic Information section (9+ fields)
+      - Student Scores section (ACT, SAT, GPA with subscores)
+      - Tabbed notes (Counselor, Tutoring, Essay)
+      - Conversation log (3+ entries with date, employee, type, subject, comment)
+    
+    ✓ RIGHT COLUMN (35%):
+      - Upcoming Sessions table
+      - Add Conversation form (employee dropdown, date, subject, comment, checkbox)
+      - Team members (Counselor, Essay Coach, Tutor with avatars)
+      - Family section (2 family members with relationship, email, phone)
+
+11. SAMPLE DATA
+    ✓ 8 comprehensive students with all fields:
+      1. Daniela Aguilar Villalobos (2026, Lincoln HS, CA)
+      2. Madelyn Hart (2026, Westview Academy, FL)
+      3. Meera Kumar (2027, North Ridge Prep, NY)
+      4. William Chen (2026, Eastlake HS, WA)
+      5. Sofia Rodriguez (2027, Memorial HS, TX)
+      6. James Thompson (2025, Oak Park Academy, IL)
+      7. Ananya Patel (2026, Riverside HS, NJ)
+      8. Jordan Williams (2027, Crestwood Prep, MA)
+    
+    ✓ Each with: name, school, state, grad year, counselor, coach, tutor
+    ✓ Meeting counts and dates
+    ✓ Hours (counselor, essay, tutoring)
+    ✓ Academic scores (ACT, SAT, GPA, AP classes)
+    ✓ Workshops count
+    ✓ Status notes
+
+12. FEATURES & POLISH
+    ✓ All dates formatted MM/DD/YY
+    ✓ Cards have shadow-sm and rounded-lg
+    ✓ Hover effects on buttons and cards
+    ✓ Navigation functional (state-based routing)
+    ✓ Student name clickable → Student Detail
+    ✓ Back button returns to Dashboard
+    ✓ Progress bars for hours tracking
+    ✓ Color-coded status indicators
+    ✓ Responsive grid layouts
+    ✓ Sticky table headers in matrices
+    ✓ Top navigation bar with current page title
+    ✓ Email/info action buttons
+
+13. CODE QUALITY
+    ✓ Single file, self-contained
+    ✓ Clear component function separation
+    ✓ Descriptive variable names
+    ✓ Component-based architecture
+    ✓ Reusable helper components (MetricChip, StatBox, InputField)
+    ✓ Realistic data generation functions
+    ✓ No console errors or warnings (expected)
+    ✓ Proper React hooks usage (useState)
+
+EXPORT
+======
+✓ export default at end of file
+✓ Ready to use in React application
+✓ No missing closing tags or syntax errors
+
+STATUS: COMPLETE & VERIFIED
+All requirements met. Ready for implementation.

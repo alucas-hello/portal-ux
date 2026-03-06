@@ -1,0 +1,2432 @@
+{
+  "appName": "HC Employee Portal",
+  "auditDate": "2026-03-05",
+  "baseUrl": "https://portal.sayhellocollege.com/backend",
+  "globalNavigation": {
+    "topBar": {
+      "logo": "HC EMPLOYEE PORTAL",
+      "userBadges": {
+        "description": "Colored user badges for quick-switch between users",
+        "interactive": true
+      },
+      "globalSearch": {
+        "placeholder": "Search for a student",
+        "type": "text_input"
+      },
+      "primaryNavigation": [
+        "Home",
+        "Menu",
+        "Reports",
+        "Sales",
+        "Settings"
+      ]
+    },
+    "navigationDropdowns": {
+      "menu": [
+        "Colleges",
+        "High Schools",
+        "Registration and Attendance",
+        "Time Tracker",
+        "Database Chat Bot"
+      ],
+      "reports": [
+        "College Decision Reports",
+        "Hours Report",
+        "Student Scores Reports",
+        "Evidence",
+        "More Reports"
+      ],
+      "sales": [
+        "Siblings Reports",
+        "Programs",
+        "Services",
+        "Badges",
+        "Tasks",
+        "Product Order"
+      ],
+      "settings": [
+        "Students",
+        "Employees",
+        "Emails",
+        "Portal Settings",
+        "Access to Editsite",
+        "Submit Feedback",
+        "Log out"
+      ]
+    },
+    "leftSidebarDashboard": [
+      "Counselor Dashboard",
+      "Tasks",
+      "Workshops",
+      "Essay Coach",
+      "Tutor"
+    ],
+    "statusLegend": {
+      "notStarted": {
+        "symbol": "red dot",
+        "label": "Not started"
+      },
+      "registered": {
+        "symbol": "R",
+        "label": "Registered"
+      },
+      "inProgress": {
+        "symbol": "orange dot",
+        "label": "In Progress"
+      },
+      "completed": {
+        "symbol": "checkmark",
+        "label": "Completed"
+      },
+      "optedOut": {
+        "symbol": "dash",
+        "label": "Opted out"
+      },
+      "onHold": {
+        "symbol": "on hold",
+        "label": "On Hold"
+      },
+      "suspended": {
+        "symbol": "X",
+        "label": "Suspended"
+      }
+    }
+  },
+  "pages": [
+    {
+      "pageNumber": 1,
+      "pageName": "Counselor Dashboard",
+      "url": "/backend",
+      "description": "Main dashboard showing counselor caseload and student progress",
+      "filters": {
+        "searchInput": {
+          "type": "text",
+          "placeholder": "Search"
+        },
+        "counselorDropdown": {
+          "type": "dropdown",
+          "options": [
+            "All Counselors",
+            "Individual counselor names"
+          ]
+        },
+        "gradYearTags": {
+          "type": "multi_select",
+          "options": [
+            "2025",
+            "2026",
+            "2027"
+          ]
+        }
+      },
+      "leftSidebarFilters": {
+        "daysSinceLastMeeting": {
+          "type": "button_group",
+          "buttons": [
+            "+30",
+            "+60",
+            "+75",
+            "+90",
+            "+120",
+            "+180"
+          ]
+        },
+        "selectAFilter": {
+          "type": "dropdown"
+        },
+        "timeRange": {
+          "type": "button_group",
+          "buttons": [
+            "Today",
+            "7 days",
+            "30 days"
+          ]
+        },
+        "nextBookedWorkshopSection": {
+          "label": "Next Booked Workshop",
+          "filterPattern": "same as Days since Last Meeting"
+        },
+        "sendMassEmail": {
+          "type": "button",
+          "label": "Send Mass Email"
+        },
+        "resetFilters": {
+          "type": "link",
+          "label": "Reset Filters"
+        }
+      },
+      "tableColumns": [
+        {
+          "name": "Student",
+          "type": "linked_name",
+          "includes": [
+            "Student name (clickable link)",
+            "Info icon",
+            "Email icon"
+          ]
+        },
+        {
+          "name": "Number of Meetings",
+          "type": "numeric"
+        },
+        {
+          "name": "Last Meeting",
+          "type": "date"
+        },
+        {
+          "name": "Next Contact Date",
+          "type": "date"
+        },
+        {
+          "name": "Next Meeting",
+          "type": "date"
+        },
+        {
+          "name": "Hours Used / Total Hours",
+          "type": "ratio"
+        },
+        {
+          "name": "Number of Workshops",
+          "type": "numeric"
+        },
+        {
+          "name": "Next Booked Workshop",
+          "type": "status",
+          "values": [
+            "NOT BOOKED (red text)",
+            "Workshop name"
+          ]
+        },
+        {
+          "name": "Next Booked Workshop Date",
+          "type": "date"
+        },
+        {
+          "name": "Notes",
+          "type": "text"
+        }
+      ],
+      "sampleData": [
+        {
+          "student": "Aguilar Villalobos, Daniela",
+          "numberOfMeetings": 12,
+          "lastMeeting": "01/13/26",
+          "nextContactDate": "03/10/26",
+          "nextMeeting": "03/10/26",
+          "hoursUsed": "16.75/19",
+          "numberOfWorkshops": 18,
+          "nextBookedWorkshop": "NOT BOOKED",
+          "nextBookedWorkshopDate": null,
+          "notes": ""
+        },
+        {
+          "student": "Hart, Madelyn",
+          "numberOfMeetings": 17,
+          "lastMeeting": "01/06/26",
+          "nextContactDate": "04/27/26",
+          "nextMeeting": "04/27/26",
+          "hoursUsed": "19/20",
+          "numberOfWorkshops": 33,
+          "nextBookedWorkshop": "NOT BOOKED",
+          "nextBookedWorkshopDate": null,
+          "notes": "Bought before meetings or hours"
+        },
+        {
+          "student": "Kumar, Meera",
+          "numberOfMeetings": 24,
+          "lastMeeting": "02/25/26",
+          "nextContactDate": "04/06/26",
+          "nextMeeting": "04/06/26",
+          "hoursUsed": "26.75/60",
+          "numberOfWorkshops": 8,
+          "nextBookedWorkshop": "NOT BOOKED",
+          "nextBookedWorkshopDate": null,
+          "notes": ""
+        }
+      ],
+      "pagination": {
+        "studentsPerPageDropdown": [
+          "20"
+        ],
+        "totalResultsCount": "Displays total number of students",
+        "pageNumbers": "Navigable page numbers"
+      }
+    },
+    {
+      "pageNumber": 2,
+      "pageName": "Tasks",
+      "url": "/backend",
+      "urlFragment": "Tasks tab",
+      "description": "Matrix view of student progress on task milestones",
+      "filters": {
+        "searchInput": {
+          "type": "text",
+          "placeholder": "Search"
+        },
+        "counselorDropdown": {
+          "type": "dropdown",
+          "options": [
+            "All Counselors",
+            "Individual counselor names"
+          ]
+        },
+        "gradYearTags": {
+          "type": "multi_select",
+          "options": [
+            "2025",
+            "2026",
+            "2027"
+          ]
+        }
+      },
+      "layout": "matrix_grid",
+      "layoutDescription": "Students as rows, task milestones as columns",
+      "taskMilestones": [
+        {
+          "number": 1,
+          "name": "Complete YouScience & Assessment"
+        },
+        {
+          "number": 2,
+          "name": "Review S.A.F.E College Preferences"
+        },
+        {
+          "number": 3,
+          "name": "Create College Research Plan"
+        },
+        {
+          "number": 4,
+          "name": "Review High School Course Selection"
+        },
+        {
+          "number": 5,
+          "name": "Develop Test Prep Strategy"
+        },
+        {
+          "number": 6,
+          "name": "Private Budget Meeting"
+        },
+        {
+          "number": 7,
+          "name": "Develop Preliminary College List"
+        },
+        {
+          "number": 8,
+          "name": "Establish Recommendation Letter Strategy"
+        },
+        {
+          "number": 9,
+          "name": "Develop Resume"
+        },
+        {
+          "number": 10,
+          "name": "Define Scholarship Plan"
+        },
+        {
+          "number": 11,
+          "name": "Refine College List"
+        },
+        {
+          "number": 12,
+          "name": "Common App Personal Statement Topic Identified"
+        },
+        {
+          "number": 13,
+          "name": "Supplemental Essay Strategy"
+        },
+        {
+          "number": 14,
+          "name": "Complete My Common App Personal Statement"
+        },
+        {
+          "number": 15,
+          "name": "Set Application Strategy"
+        },
+        {
+          "number": 16,
+          "name": "1-1 Application Review"
+        },
+        {
+          "number": 17,
+          "name": "All Essays Reviewed"
+        },
+        {
+          "number": 18,
+          "name": "Mock College Interview Meeting"
+        },
+        {
+          "number": 19,
+          "name": "Award Assessment & Decision Meeting"
+        },
+        {
+          "number": 20,
+          "name": "Additional Milestone"
+        }
+      ],
+      "cellValues": {
+        "completed": "checkmark",
+        "inProgress": "orange circle",
+        "notStarted": "red circle",
+        "notApplicable": "dash"
+      }
+    },
+    {
+      "pageNumber": 3,
+      "pageName": "Workshops",
+      "url": "/backend",
+      "urlFragment": "Workshops tab",
+      "description": "Matrix view of student workshop attendance and registration",
+      "filters": {
+        "searchInput": {
+          "type": "text",
+          "placeholder": "Search"
+        },
+        "counselorDropdown": {
+          "type": "dropdown",
+          "options": [
+            "All Counselors",
+            "Individual counselor names"
+          ]
+        },
+        "gradYearTags": {
+          "type": "multi_select",
+          "options": [
+            "2025",
+            "2026",
+            "2027"
+          ]
+        }
+      },
+      "layout": "matrix_grid",
+      "layoutDescription": "Students as rows, workshops as columns",
+      "workshopColumns": [
+        {
+          "number": 1,
+          "name": "Major and Career Exploration Workshop"
+        },
+        {
+          "number": 2,
+          "name": "Stand Out Factor Workshop"
+        },
+        {
+          "number": 3,
+          "name": "College Admissions 101 Workshop"
+        },
+        {
+          "number": 4,
+          "name": "Mastering Academic Success Workshop"
+        },
+        {
+          "number": 5,
+          "name": "Standing Out as an Underclassman Workshop"
+        },
+        {
+          "number": 6,
+          "name": "Paying for College Workshop"
+        },
+        {
+          "number": 7,
+          "name": "Take a Practice ACT or SAT"
+        },
+        {
+          "number": 8,
+          "name": "Junior Scholarship Workshop"
+        },
+        {
+          "number": 9,
+          "name": "Activities & Honors Workshop"
+        },
+        {
+          "number": 10,
+          "name": "Common App Personal Statement Workshop"
+        },
+        {
+          "number": 11,
+          "name": "Common Application Workshop"
+        },
+        {
+          "number": 12,
+          "name": "Supplemental Essay Workshop"
+        },
+        {
+          "number": 13,
+          "name": "FAFSA/CSS Profile Workshop"
+        },
+        {
+          "number": 14,
+          "name": "Senior Scholarship Bootcamp"
+        },
+        {
+          "number": 15,
+          "name": "College & Career Transition Workshop"
+        }
+      ],
+      "cellValues": {
+        "completed": "checkmark",
+        "inProgress": "orange circle",
+        "notStarted": "red circle",
+        "registered": "R",
+        "notApplicable": "dash"
+      }
+    },
+    {
+      "pageNumber": 4,
+      "pageName": "Essay Coach",
+      "url": "/backend",
+      "urlFragment": "Essay Coach tab",
+      "description": "Essay coach caseload and student progress tracking",
+      "filters": {
+        "searchInput": {
+          "type": "text",
+          "placeholder": "Search"
+        },
+        "essayCoachDropdown": {
+          "type": "dropdown",
+          "description": "Filter by specific essay coach",
+          "example": "Chris Bench"
+        },
+        "gradYearTags": {
+          "type": "multi_select",
+          "options": [
+            "2025",
+            "2026",
+            "2027"
+          ]
+        }
+      },
+      "tableColumns": [
+        {
+          "name": "Student",
+          "type": "linked_name"
+        },
+        {
+          "name": "Major",
+          "type": "text"
+        },
+        {
+          "name": "Counselor",
+          "type": "text"
+        },
+        {
+          "name": "Essay Coach",
+          "type": "text"
+        },
+        {
+          "name": "Last Essay Meeting",
+          "type": "date"
+        },
+        {
+          "name": "Next Schedule Essay Meeting",
+          "type": "date"
+        },
+        {
+          "name": "Total Essay Coach Meetings",
+          "type": "numeric"
+        },
+        {
+          "name": "Essay Coach Hours Used/Total Hours Available",
+          "type": "ratio"
+        },
+        {
+          "name": "Total Hours Remaining",
+          "type": "numeric"
+        },
+        {
+          "name": "Notes",
+          "type": "text"
+        },
+        {
+          "name": "Common App Personal Statement Workshop",
+          "type": "status"
+        },
+        {
+          "name": "Common App Personal Statement Topic Identified",
+          "type": "status"
+        },
+        {
+          "name": "Complete My Common App Personal Statement",
+          "type": "status"
+        },
+        {
+          "name": "Supplemental Essay Workshop",
+          "type": "status"
+        },
+        {
+          "name": "Supplemental Essay Strategy",
+          "type": "status"
+        },
+        {
+          "name": "All Essays Reviewed",
+          "type": "status"
+        }
+      ],
+      "sampleData": [
+        {
+          "student": "Charles, Michael",
+          "major": "Business Marketing/International Business/Finance/Literature Undecided",
+          "counselor": "Hall Meg",
+          "essayCoach": "Bench Chris",
+          "lastEssayMeeting": "06/18/25",
+          "nextScheduleEssayMeeting": null,
+          "totalEssayCoachMeetings": 5,
+          "hoursUsedTotal": "6.5/10",
+          "totalHoursRemaining": "3.5"
+        },
+        {
+          "student": "Flanagan, Callie",
+          "major": "pre-med",
+          "counselor": "Krebs Kevin",
+          "essayCoach": "Bench Chris",
+          "lastEssayMeeting": "07/14/25",
+          "nextScheduleEssayMeeting": null,
+          "totalEssayCoachMeetings": 5,
+          "hoursUsedTotal": "15.5/21",
+          "totalHoursRemaining": "5.5"
+        },
+        {
+          "student": "Hong, Logan",
+          "major": "Biomedical Engineering",
+          "counselor": null,
+          "essayCoach": "Bench Chris",
+          "lastEssayMeeting": "10/18/25",
+          "nextScheduleEssayMeeting": null,
+          "totalEssayCoachMeetings": 13,
+          "hoursUsedTotal": "22.5/24",
+          "totalHoursRemaining": "1.5"
+        }
+      ]
+    },
+    {
+      "pageNumber": 5,
+      "pageName": "Tutor Dashboard",
+      "url": "/backend",
+      "urlFragment": "Tutor tab",
+      "description": "Tutor caseload with session tracking and student scores",
+      "filters": {
+        "searchInput": {
+          "type": "text",
+          "placeholder": "Search"
+        },
+        "tutorDropdown": {
+          "type": "dropdown",
+          "description": "Filter by specific tutor",
+          "example": "Ian Simon"
+        },
+        "gradYearTags": {
+          "type": "multi_select",
+          "options": [
+            "2025",
+            "2026",
+            "2027"
+          ]
+        }
+      },
+      "layout": "card_style_rows",
+      "layoutDescription": "Wider card-style rows different from other dashboards",
+      "tableColumns": [
+        {
+          "name": "Student Info",
+          "type": "composite",
+          "includes": [
+            "Student name",
+            "Email icon",
+            "Phone icon",
+            "Graduation year",
+            "Email address",
+            "Phone number"
+          ]
+        },
+        {
+          "name": "Tutor",
+          "type": "text"
+        },
+        {
+          "name": "Last Session",
+          "type": "date"
+        },
+        {
+          "name": "Next Session",
+          "type": "date"
+        },
+        {
+          "name": "Available Hrs",
+          "type": "numeric"
+        },
+        {
+          "name": "Scores",
+          "type": "composite",
+          "subscores": [
+            "ACT",
+            "SAT",
+            "GPA"
+          ]
+        },
+        {
+          "name": "Conversation",
+          "type": "composite",
+          "includes": [
+            "Date",
+            "Note text",
+            "More link"
+          ]
+        },
+        {
+          "name": "Notes",
+          "type": "composite",
+          "includes": [
+            "Date",
+            "Note text",
+            "Edit icon"
+          ]
+        }
+      ],
+      "sampleData": [
+        {
+          "student": "Ayscue, Quincy",
+          "year": "2027",
+          "email": "quayscue@shorecrest.org",
+          "phone": "+1(571)453-1373",
+          "tutor": "Ian Simon",
+          "lastSession": "12/18/25",
+          "nextSession": null,
+          "availableHours": "8.25",
+          "actScore": null,
+          "satScore": null,
+          "gpa": "4.0",
+          "conversation": "10/17/25: Quincy, I apologize for taking so long...",
+          "notes": "03/04/26: Still meeting occasionally for EF..."
+        },
+        {
+          "student": "Victor, Tara",
+          "year": "2026",
+          "email": "taravictor@gmail.com",
+          "phone": "+1(312)852-2607",
+          "tutor": "Ian Simon+Lauren Fogg",
+          "lastSession": "01/16/26",
+          "nextSession": "03/13/26",
+          "availableHours": "3.5",
+          "actScore": "35",
+          "satScore": "1460",
+          "gpa": "4.6"
+        }
+      ]
+    },
+    {
+      "pageNumber": 6,
+      "pageName": "Student Detail",
+      "url": "/backend/students/{id}",
+      "description": "Comprehensive student profile with all information and activity history",
+      "topBar": {
+        "studentName": "Student name",
+        "studentYear": "Graduation year",
+        "notesLink": "Notes (clickable, top-right)",
+        "actions": [
+          {
+            "label": "COMPOSE EMAIL",
+            "type": "button"
+          },
+          {
+            "label": "Print",
+            "type": "icon_button"
+          },
+          {
+            "label": "Settings",
+            "type": "icon_button"
+          }
+        ]
+      },
+      "leftColumn": {
+        "studentSummary": {
+          "avatar": "Avatar placeholder",
+          "name": "Student full name",
+          "year": "Graduation year",
+          "highSchool": "High school name",
+          "state": "State abbreviation"
+        },
+        "selectivityDropdown": {
+          "type": "dropdown",
+          "description": "Academic selectivity level",
+          "options": [
+            "Very < 30%",
+            "Other levels..."
+          ]
+        },
+        "hoursSummary": [
+          {
+            "type": "Counselor Hours Used",
+            "format": "X/Y"
+          },
+          {
+            "type": "Essay Hours Used",
+            "format": "X/Y"
+          },
+          {
+            "type": "Tutoring Hours Used",
+            "format": "X/Y"
+          }
+        ],
+        "cadenceDropdowns": [
+          {
+            "label": "Pre-Up to April Jr",
+            "options": [
+              "Monthly",
+              "Other options..."
+            ]
+          },
+          {
+            "label": "Peak-May to Aug Jr",
+            "options": [
+              "Monthly",
+              "Other options..."
+            ]
+          },
+          {
+            "label": "Peak-Sep to Dec Jr",
+            "options": [
+              "Monthly",
+              "Other options..."
+            ]
+          },
+          {
+            "label": "Jan Sr-Grad",
+            "options": [
+              "Monthly",
+              "Other options..."
+            ]
+          }
+        ],
+        "currentCadence": "Calculated based on current date",
+        "hoursSchedule": "Estimated last meeting info",
+        "nextContactDate": {
+          "type": "date_picker_with_button",
+          "buttonLabel": "SET DATE"
+        },
+        "actionButtons": [
+          "LOGIN AS STUDENT",
+          "SEND STUDENT PASSWORD RESET",
+          "LOG QUICK ADMIN TASK"
+        ]
+      },
+      "rightColumn": {
+        "ycbmEvents": {
+          "title": "YCBM Events",
+          "tableColumns": [
+            {
+              "name": "Appointment Type",
+              "type": "text"
+            },
+            {
+              "name": "Date",
+              "type": "date"
+            },
+            {
+              "name": "Profile Name",
+              "type": "linked_text"
+            },
+            {
+              "name": "Time",
+              "type": "time"
+            }
+          ],
+          "description": "Shows counseling and essay coach meeting history",
+          "moreButton": true
+        }
+      },
+      "addConversationSection": {
+        "title": "Add Conversation",
+        "fields": [
+          {
+            "label": "Select HC Employee",
+            "type": "dropdown"
+          },
+          {
+            "label": "Comment Date",
+            "type": "date"
+          },
+          {
+            "label": "Note Type",
+            "type": "dropdown",
+            "options": [
+              "Admin/Communications",
+              "Counselor Session",
+              "Essay Session",
+              "Tutor Session",
+              "Other types..."
+            ]
+          },
+          {
+            "label": "Session info",
+            "type": "text"
+          },
+          {
+            "label": "Hours",
+            "type": "dropdown",
+            "description": "Select conversation hour"
+          },
+          {
+            "label": "Subject",
+            "type": "text_field"
+          },
+          {
+            "label": "Comment",
+            "type": "rich_text_editor",
+            "toolbarOptions": [
+              "Bold",
+              "Italic",
+              "Strikethrough",
+              "Link",
+              "Font styles",
+              "Lists",
+              "Indent",
+              "Block Quote"
+            ]
+          },
+          {
+            "label": "Show subject and comment to clients",
+            "type": "checkbox"
+          }
+        ],
+        "buttons": [
+          {
+            "label": "SAVE CONVERSATION",
+            "type": "primary"
+          },
+          {
+            "label": "SAVE AND NOTIFY",
+            "type": "primary"
+          }
+        ]
+      },
+      "counselorNotes": {
+        "title": "Counselor Notes",
+        "fields": [
+          {
+            "label": "Last updated",
+            "type": "date"
+          },
+          {
+            "label": "Note content",
+            "type": "textarea"
+          }
+        ],
+        "buttons": [
+          {
+            "label": "SAVE NOTE",
+            "type": "primary"
+          }
+        ]
+      },
+      "tutoringNotes": {
+        "title": "Tutoring Notes",
+        "collapsible": true
+      },
+      "essayNotes": {
+        "title": "Essay Notes",
+        "collapsible": true
+      },
+      "collapsibleSections": [
+        {
+          "sectionNumber": 1,
+          "sectionTitle": "BASIC INFORMATION",
+          "fields": [
+            {
+              "label": "First Name",
+              "type": "text"
+            },
+            {
+              "label": "Last Name",
+              "type": "text"
+            },
+            {
+              "label": "Gender",
+              "type": "dropdown",
+              "options": [
+                "Male",
+                "Female",
+                "Transgender",
+                "Non-binary",
+                "Prefer not to respond"
+              ]
+            },
+            {
+              "label": "Email",
+              "type": "email"
+            },
+            {
+              "label": "Secondary Email",
+              "type": "email"
+            },
+            {
+              "label": "Mobile Phone",
+              "type": "phone",
+              "includes": [
+                "Country code",
+                "Number"
+              ]
+            },
+            {
+              "label": "Home Phone",
+              "type": "phone",
+              "includes": [
+                "Country code",
+                "Number"
+              ]
+            },
+            {
+              "label": "Birth Date",
+              "type": "date"
+            },
+            {
+              "label": "Desired Outcomes",
+              "type": "textarea"
+            },
+            {
+              "label": "High School",
+              "type": "dropdown",
+              "description": "Dropdown with hundreds of schools"
+            },
+            {
+              "label": "Year of Graduation",
+              "type": "text"
+            },
+            {
+              "label": "Enrollment Date",
+              "type": "date"
+            },
+            {
+              "label": "Country",
+              "type": "tag_select"
+            },
+            {
+              "label": "State/Province",
+              "type": "tag_select"
+            },
+            {
+              "label": "City",
+              "type": "text"
+            },
+            {
+              "label": "Zip Code",
+              "type": "text"
+            },
+            {
+              "label": "Address Line 1",
+              "type": "text"
+            },
+            {
+              "label": "Address Line 2",
+              "type": "text"
+            },
+            {
+              "label": "Citizenship Status",
+              "type": "dropdown",
+              "options": [
+                "U.S. Citizen",
+                "Permanent Resident",
+                "Other options..."
+              ]
+            },
+            {
+              "label": "Ethnicity",
+              "type": "dropdown"
+            },
+            {
+              "label": "Race",
+              "type": "dropdown"
+            },
+            {
+              "label": "ID",
+              "type": "text"
+            },
+            {
+              "label": "Major",
+              "type": "text"
+            },
+            {
+              "label": "Reference",
+              "type": "checkbox"
+            },
+            {
+              "label": "Suspended",
+              "type": "checkbox"
+            },
+            {
+              "label": "Hidden",
+              "type": "checkbox"
+            },
+            {
+              "label": "On hold",
+              "type": "checkbox"
+            }
+          ],
+          "subsections": [
+            {
+              "subsectionTitle": "HIGH SCHOOL RELATED QUESTIONS",
+              "fields": [
+                {
+                  "label": "1st Generation College Student",
+                  "type": "checkbox"
+                },
+                {
+                  "label": "Highly Selective Admissions",
+                  "type": "checkbox"
+                },
+                {
+                  "label": "IEP or 504",
+                  "type": "checkbox"
+                },
+                {
+                  "label": "Sports/Music/Talent Scholarship Potential",
+                  "type": "checkbox"
+                },
+                {
+                  "label": "BSMD",
+                  "type": "checkbox"
+                },
+                {
+                  "label": "Other",
+                  "type": "checkbox"
+                },
+                {
+                  "label": "Family Military Service",
+                  "type": "checkbox"
+                },
+                {
+                  "label": "Ethic",
+                  "type": "textarea"
+                },
+                {
+                  "label": "Challenges",
+                  "type": "textarea"
+                }
+              ]
+            },
+            {
+              "subsectionTitle": "FINANCIAL DETAILS",
+              "fields": [
+                {
+                  "label": "Federal Student Aid Estimate",
+                  "type": "text"
+                },
+                {
+                  "label": "Household gross annual income",
+                  "type": "dropdown",
+                  "options": [
+                    "300K+",
+                    "Other ranges..."
+                  ]
+                },
+                {
+                  "label": "Total Non-Retirement Assets",
+                  "type": "text"
+                },
+                {
+                  "label": "Total college savings",
+                  "type": "text"
+                },
+                {
+                  "label": "Willingness to pay out of pocket",
+                  "type": "text"
+                },
+                {
+                  "label": "Considering loans",
+                  "type": "checkbox"
+                },
+                {
+                  "label": "Comfortable discussing finances with student",
+                  "type": "checkbox"
+                },
+                {
+                  "label": "Comfortable discussing with HC team",
+                  "type": "checkbox"
+                }
+              ]
+            },
+            {
+              "subsectionTitle": "CHANGE STUDENT PASSWORD",
+              "fields": [
+                {
+                  "label": "New password",
+                  "type": "password"
+                },
+                {
+                  "label": "Password confirmation",
+                  "type": "password"
+                },
+                {
+                  "label": "Autogenerate",
+                  "type": "checkbox"
+                },
+                {
+                  "label": "Send to student",
+                  "type": "checkbox"
+                }
+              ],
+              "buttons": [
+                "CANCEL CHANGES",
+                "SAVE"
+              ]
+            }
+          ]
+        },
+        {
+          "sectionNumber": 2,
+          "sectionTitle": "FINAL SURVEY",
+          "fieldCount": 22,
+          "fields": [
+            {
+              "question": "Feel more confident applying?",
+              "type": "dropdown_text"
+            },
+            {
+              "question": "Help stay organized and meet deadlines?",
+              "type": "dropdown_text"
+            },
+            {
+              "question": "Build more well-rounded college list?",
+              "type": "dropdown_text"
+            },
+            {
+              "question": "Recommend to friend/family?",
+              "type": "dropdown_text"
+            },
+            {
+              "question": "Accepted at top three?",
+              "type": "dropdown_text"
+            },
+            {
+              "question": "How many reach schools accepted?",
+              "type": "dropdown_text"
+            },
+            {
+              "question": "Avoid mistakes?",
+              "type": "dropdown_text"
+            },
+            {
+              "question": "Made process easier/less stressful?",
+              "type": "dropdown_text"
+            },
+            {
+              "question": "Better outcomes than friends?",
+              "type": "dropdown_text"
+            },
+            {
+              "question": "Introduced to new colleges?",
+              "type": "dropdown_text"
+            },
+            {
+              "question": "Earn private/merit scholarships?",
+              "type": "dropdown_text"
+            },
+            {
+              "question": "Willing to be resource for future students?",
+              "type": "dropdown_text"
+            },
+            {
+              "question": "Recommend (NPS)?",
+              "type": "dropdown_text"
+            },
+            {
+              "question": "Strengths",
+              "type": "textarea"
+            },
+            {
+              "question": "Improvements",
+              "type": "textarea"
+            },
+            {
+              "question": "Additional feedback",
+              "type": "textarea"
+            },
+            {
+              "question": "Exit school",
+              "type": "text"
+            },
+            {
+              "question": "Major",
+              "type": "text"
+            },
+            {
+              "question": "Scholarship amount",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "sectionNumber": 3,
+          "sectionTitle": "STUDENT INFORMATION",
+          "fieldCount": 65,
+          "fields": [
+            {
+              "label": "Describe extracurricular activities",
+              "type": "textarea"
+            },
+            {
+              "label": "Hobbies",
+              "type": "textarea"
+            },
+            {
+              "label": "Favorite facts",
+              "type": "textarea"
+            },
+            {
+              "label": "Employment",
+              "type": "textarea"
+            },
+            {
+              "label": "Potential Major(s)",
+              "type": "textarea"
+            },
+            {
+              "label": "How committed",
+              "type": "dropdown"
+            },
+            {
+              "label": "College Goals",
+              "type": "textarea"
+            },
+            {
+              "label": "List interested colleges",
+              "type": "textarea"
+            },
+            {
+              "label": "Career interests",
+              "type": "textarea"
+            },
+            {
+              "label": "Dream job",
+              "type": "textarea"
+            }
+          ],
+          "subsections": [
+            {
+              "subsectionTitle": "Location by region",
+              "type": "checkbox_group",
+              "options": [
+                "West",
+                "Midwest",
+                "Northwest",
+                "South",
+                "Southwest",
+                "Southeast",
+                "Midatlantic",
+                "Northeast",
+                "No preference"
+              ]
+            },
+            {
+              "subsectionTitle": "Setting",
+              "type": "checkbox_group",
+              "options": [
+                "Urban",
+                "Suburban",
+                "Rural",
+                "No preference"
+              ]
+            },
+            {
+              "subsectionTitle": "Size",
+              "type": "checkbox_group",
+              "options": [
+                "X-large (25k+)",
+                "Large (15-25k)",
+                "Med (5-15k)",
+                "Small (under 5k)",
+                "No preference"
+              ]
+            },
+            {
+              "subsectionTitle": "Diversity",
+              "type": "checkbox_group",
+              "options": [
+                "Historically black university",
+                "Diverse campus important",
+                "All male",
+                "All female",
+                "No preference"
+              ]
+            },
+            {
+              "subsectionTitle": "Political Views",
+              "type": "checkbox_group",
+              "options": [
+                "Conservative",
+                "Moderate",
+                "Liberal",
+                "No preference"
+              ]
+            },
+            {
+              "subsectionTitle": "Athletic",
+              "type": "checkbox_group",
+              "options": [
+                "Scholarship desired",
+                "D1 desired",
+                "Not a consideration"
+              ]
+            },
+            {
+              "label": "Religious Affiliation",
+              "type": "dropdown"
+            },
+            {
+              "label": "College Athletic Reputation",
+              "type": "dropdown"
+            },
+            {
+              "label": "Health and Other Support Services",
+              "type": "dropdown"
+            }
+          ],
+          "dropdownPreferences": [
+            {
+              "label": "Academic Selectivity",
+              "type": "checkbox_group",
+              "options": [
+                "Elite",
+                "Highly selective",
+                "Moderately selective",
+                "Open enrollment",
+                "No preference"
+              ]
+            },
+            {
+              "label": "Strength for My Major",
+              "type": "dropdown",
+              "options": [
+                "Top Tier",
+                "Other levels..."
+              ]
+            },
+            {
+              "label": "Brand Name Recognition",
+              "type": "dropdown"
+            },
+            {
+              "label": "Student Faculty",
+              "type": "dropdown"
+            },
+            {
+              "label": "Study Abroad",
+              "type": "dropdown"
+            },
+            {
+              "label": "Affordability",
+              "type": "dropdown"
+            },
+            {
+              "label": "Financial Need Aid",
+              "type": "dropdown"
+            },
+            {
+              "label": "Merit-Aid",
+              "type": "dropdown"
+            },
+            {
+              "label": "Internships",
+              "type": "dropdown"
+            },
+            {
+              "label": "Alumni Network",
+              "type": "dropdown"
+            },
+            {
+              "label": "Job Placement",
+              "type": "dropdown"
+            }
+          ]
+        },
+        {
+          "sectionNumber": 4,
+          "sectionTitle": "STUDENT SCORES AND GRADES",
+          "fieldCount": 16,
+          "fields": [
+            {
+              "label": "Test entry form",
+              "subsectionTitle": "Add Test Score",
+              "fields": [
+                {
+                  "label": "Type",
+                  "type": "dropdown",
+                  "options": [
+                    "ACT",
+                    "SAT"
+                  ]
+                },
+                {
+                  "label": "Options",
+                  "type": "dropdown",
+                  "options": [
+                    "Official ACT",
+                    "Practice"
+                  ]
+                },
+                {
+                  "label": "Date",
+                  "type": "date"
+                },
+                {
+                  "label": "Note",
+                  "type": "text"
+                }
+              ]
+            }
+          ],
+          "actScores": [
+            {
+              "label": "English",
+              "type": "numeric"
+            },
+            {
+              "label": "Math",
+              "type": "numeric"
+            },
+            {
+              "label": "Reading",
+              "type": "numeric"
+            },
+            {
+              "label": "Science",
+              "type": "numeric"
+            },
+            {
+              "label": "Composite Score",
+              "type": "numeric"
+            }
+          ],
+          "satScores": [
+            {
+              "label": "Math",
+              "type": "numeric"
+            },
+            {
+              "label": "Reading",
+              "type": "numeric"
+            },
+            {
+              "label": "Composite Score",
+              "type": "numeric"
+            }
+          ],
+          "gpaFields": [
+            {
+              "label": "Weighted GPA/Scale",
+              "type": "numeric"
+            },
+            {
+              "label": "Unweighted GPA/Scale",
+              "type": "numeric"
+            }
+          ],
+          "apIbScores": [
+            {
+              "label": "Subject",
+              "type": "text"
+            },
+            {
+              "label": "Score",
+              "type": "numeric"
+            }
+          ],
+          "existingScoresTable": {
+            "columns": [
+              {
+                "name": "Date",
+                "type": "date"
+              },
+              {
+                "name": "Composite Score",
+                "type": "numeric"
+              },
+              {
+                "name": "Subtype",
+                "type": "text"
+              },
+              {
+                "name": "English",
+                "type": "numeric"
+              },
+              {
+                "name": "Math",
+                "type": "numeric"
+              },
+              {
+                "name": "Reading",
+                "type": "numeric"
+              },
+              {
+                "name": "Science",
+                "type": "numeric"
+              },
+              {
+                "name": "Note",
+                "type": "text"
+              },
+              {
+                "name": "Delete",
+                "type": "action"
+              }
+            ]
+          }
+        },
+        {
+          "sectionNumber": 5,
+          "sectionTitle": "COLLEGE DECISION INFO",
+          "description": "Table showing colleges applied to with decision status",
+          "tableColumns": [
+            {
+              "name": "College",
+              "type": "text"
+            },
+            {
+              "name": "Decision",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "sectionNumber": 6,
+          "sectionTitle": "IMPORTANT NOTES",
+          "fieldCount": 3,
+          "fields": [
+            {
+              "label": "Admin name",
+              "type": "text"
+            },
+            {
+              "label": "Note last update date",
+              "type": "date"
+            },
+            {
+              "label": "Body",
+              "type": "rich_text_editor"
+            }
+          ]
+        },
+        {
+          "sectionNumber": 7,
+          "sectionTitle": "CONVERSATION LOG",
+          "description": "Searchable table of conversations",
+          "tableColumns": [
+            {
+              "name": "Date",
+              "type": "date"
+            },
+            {
+              "name": "Type",
+              "type": "text"
+            },
+            {
+              "name": "Subject",
+              "type": "text"
+            },
+            {
+              "name": "Topic",
+              "type": "text"
+            },
+            {
+              "name": "HelloCollege Rep",
+              "type": "text"
+            },
+            {
+              "name": "Comment",
+              "type": "text"
+            },
+            {
+              "name": "Actions",
+              "type": "action"
+            }
+          ],
+          "searchable": true
+        },
+        {
+          "sectionNumber": 8,
+          "sectionTitle": "SELECTED SERVICES",
+          "description": "Services purchased by student",
+          "tableColumns": [
+            {
+              "name": "Service",
+              "type": "text"
+            },
+            {
+              "name": "Advisor",
+              "type": "text"
+            },
+            {
+              "name": "Enrollment Date",
+              "type": "date"
+            },
+            {
+              "name": "Purchase Price",
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "sectionNumber": 9,
+          "sectionTitle": "PROGRAM STATUSES",
+          "fieldCount": 43,
+          "description": "Task/Status/Timing matrix for program milestones - same tasks as Tasks dashboard but for individual student with status dropdowns",
+          "layout": "matrix",
+          "content": "Same task milestones as Tasks page but in individual student view"
+        },
+        {
+          "sectionNumber": 10,
+          "sectionTitle": "TEAM",
+          "description": "Shows assigned team members"
+        },
+        {
+          "sectionNumber": 11,
+          "sectionTitle": "FAMILY",
+          "description": "Family member information fields"
+        },
+        {
+          "sectionNumber": 12,
+          "sectionTitle": "DOCUMENTS",
+          "description": "File management system",
+          "controls": [
+            {
+              "label": "Show entries",
+              "type": "dropdown"
+            },
+            {
+              "label": "Folder filter",
+              "type": "filter"
+            }
+          ],
+          "actions": [
+            "Upload",
+            "View",
+            "Delete"
+          ]
+        },
+        {
+          "sectionNumber": 13,
+          "sectionTitle": "TRANSACTION LOG",
+          "description": "Searchable table of financial transactions",
+          "searchable": true,
+          "tableColumns": [
+            {
+              "name": "Date",
+              "type": "date"
+            },
+            {
+              "name": "Description",
+              "type": "text"
+            },
+            {
+              "name": "Amount",
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "sectionNumber": 14,
+          "sectionTitle": "LOGIN HISTORY",
+          "description": "Table showing student login activity",
+          "tableColumns": [
+            {
+              "name": "Date",
+              "type": "date_time"
+            },
+            {
+              "name": "IP Address",
+              "type": "text"
+            },
+            {
+              "name": "Device",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pageNumber": 7,
+      "pageName": "Colleges",
+      "url": "/backend/colleges",
+      "description": "Database of colleges with admissions statistics",
+      "totalEntries": 4071,
+      "tableColumns": [
+        {
+          "name": "Name",
+          "type": "text",
+          "sortable": true
+        },
+        {
+          "name": "Acceptance %",
+          "type": "percentage",
+          "sortable": true
+        },
+        {
+          "name": "State",
+          "type": "text",
+          "sortable": true
+        },
+        {
+          "name": "ACT/SAT 25%",
+          "type": "text",
+          "sortable": true
+        },
+        {
+          "name": "ACT/SAT 75%",
+          "type": "text",
+          "sortable": true
+        },
+        {
+          "name": "Early Action Deadline",
+          "type": "date",
+          "sortable": true
+        },
+        {
+          "name": "Early Decision Deadline",
+          "type": "date",
+          "sortable": true
+        },
+        {
+          "name": "Edit",
+          "type": "action_button"
+        }
+      ],
+      "actions": [
+        {
+          "label": "Search",
+          "type": "search_box"
+        },
+        {
+          "label": "ADD COLLEGE",
+          "type": "button"
+        }
+      ]
+    },
+    {
+      "pageNumber": 8,
+      "pageName": "High Schools",
+      "url": "/backend/high_schools",
+      "description": "Database of high schools",
+      "totalEntries": 975,
+      "tableColumns": [
+        {
+          "name": "Name",
+          "type": "text",
+          "sortable": true
+        },
+        {
+          "name": "Kind",
+          "type": "text",
+          "values": [
+            "Public",
+            "Not Available",
+            "Homeschool"
+          ]
+        },
+        {
+          "name": "Country",
+          "type": "text",
+          "sortable": true
+        },
+        {
+          "name": "State",
+          "type": "text",
+          "sortable": true
+        },
+        {
+          "name": "Group",
+          "type": "checkbox"
+        },
+        {
+          "name": "Total Students",
+          "type": "numeric",
+          "sortable": true
+        },
+        {
+          "name": "View",
+          "type": "icon_button"
+        },
+        {
+          "name": "Edit",
+          "type": "icon_button"
+        },
+        {
+          "name": "Delete",
+          "type": "icon_button"
+        }
+      ],
+      "actions": [
+        {
+          "label": "Search",
+          "type": "search_box"
+        },
+        {
+          "label": "Merge",
+          "type": "button"
+        },
+        {
+          "label": "ADD HIGH SCHOOL",
+          "type": "button"
+        }
+      ]
+    },
+    {
+      "pageNumber": 9,
+      "pageName": "Registration and Attendance",
+      "url": "/backend/ycbm_event_bookings/attendance_report",
+      "pageTitle": "Event Registration And Attendance Report",
+      "description": "Report on workshop/event registration and attendance",
+      "filters": {
+        "startDate": {
+          "type": "date_picker",
+          "label": "Start date"
+        },
+        "endDate": {
+          "type": "date_picker",
+          "label": "End date"
+        },
+        "upcomingEvents": {
+          "type": "checkbox",
+          "label": "Also show upcoming events"
+        },
+        "search": {
+          "type": "search_box",
+          "placeholder": "Search by title or profile name"
+        },
+        "sort": {
+          "type": "dropdown",
+          "label": "Sort",
+          "options": [
+            "Date Newest First"
+          ]
+        }
+      },
+      "layout": "expandable_event_cards",
+      "cardContent": [
+        {
+          "field": "Event name",
+          "type": "text"
+        },
+        {
+          "field": "Date/time",
+          "type": "date_time"
+        },
+        {
+          "field": "Profile link",
+          "type": "linked_text"
+        },
+        {
+          "field": "Type",
+          "type": "text"
+        },
+        {
+          "field": "Attendance count",
+          "type": "text",
+          "format": "X/Y attended"
+        }
+      ],
+      "pagination": {
+        "perPage": 100
+      }
+    },
+    {
+      "pageNumber": 10,
+      "pageName": "Time Tracking",
+      "url": "/backend/time_sheets",
+      "description": "Employee time tracking and timesheets",
+      "totalEntries": 1130,
+      "filters": {
+        "employeeDropdown": {
+          "type": "dropdown",
+          "label": "Employee"
+        },
+        "disciplineDropdown": {
+          "type": "dropdown",
+          "label": "Discipline"
+        },
+        "statusDropdown": {
+          "type": "dropdown",
+          "label": "Status"
+        },
+        "weekField": {
+          "type": "text",
+          "label": "Week"
+        }
+      },
+      "tableColumns": [
+        {
+          "name": "Employee Name",
+          "type": "text",
+          "sortable": true
+        },
+        {
+          "name": "Week",
+          "type": "text",
+          "format": "date range",
+          "sortable": true
+        },
+        {
+          "name": "Total Hours",
+          "type": "numeric",
+          "sortable": true
+        },
+        {
+          "name": "Status",
+          "type": "text",
+          "values": [
+            "Open",
+            "Closed"
+          ]
+        },
+        {
+          "name": "Actions",
+          "type": "icon_button",
+          "icon": "view"
+        }
+      ],
+      "actions": [
+        {
+          "label": "MY TIMESHEET",
+          "type": "button"
+        }
+      ]
+    },
+    {
+      "pageNumber": 11,
+      "pageName": "College Decision Reports",
+      "url": "/backend/college_decision_reports",
+      "description": "Report on student college decisions and outcomes",
+      "filters": {
+        "counselorDropdown": {
+          "type": "dropdown",
+          "label": "Counselor"
+        },
+        "noCollegeSelected": {
+          "type": "checkbox",
+          "label": "Only show students with no college selected"
+        },
+        "search": {
+          "type": "search_box",
+          "placeholder": "Search"
+        }
+      },
+      "searchFields": [
+        "State",
+        "High School",
+        "YOG",
+        "College Choice",
+        "Major"
+      ],
+      "tableColumns": [
+        {
+          "name": "Student Name",
+          "type": "linked_text"
+        },
+        {
+          "name": "State",
+          "type": "text"
+        },
+        {
+          "name": "High School",
+          "type": "text"
+        },
+        {
+          "name": "YOG",
+          "type": "text"
+        },
+        {
+          "name": "College Choice",
+          "type": "text"
+        },
+        {
+          "name": "Major",
+          "type": "text"
+        },
+        {
+          "name": "Unweighted GPA",
+          "type": "numeric"
+        },
+        {
+          "name": "Weighted GPA",
+          "type": "numeric"
+        },
+        {
+          "name": "Accepted Colleges",
+          "type": "text"
+        },
+        {
+          "name": "Waitlisted Colleges",
+          "type": "text"
+        },
+        {
+          "name": "Rejected Colleges",
+          "type": "text"
+        },
+        {
+          "name": "Rescinded Colleges",
+          "type": "text"
+        },
+        {
+          "name": "Successful Appeal",
+          "type": "text"
+        },
+        {
+          "name": "Search Appeal School",
+          "type": "text"
+        },
+        {
+          "name": "Appeal Amount",
+          "type": "currency"
+        },
+        {
+          "name": "Merit",
+          "type": "text"
+        },
+        {
+          "name": "Merit Amount",
+          "type": "currency"
+        }
+      ]
+    },
+    {
+      "pageNumber": 12,
+      "pageName": "Hours Reports",
+      "url": "/backend/hours_report/report",
+      "description": "Generate hours report for employees",
+      "formFields": [
+        {
+          "label": "Start date",
+          "type": "date_picker"
+        },
+        {
+          "label": "End date",
+          "type": "date_picker"
+        },
+        {
+          "label": "Select employee",
+          "type": "dropdown"
+        }
+      ],
+      "actions": [
+        {
+          "label": "GENERATE REPORT",
+          "type": "button"
+        }
+      ]
+    },
+    {
+      "pageNumber": 13,
+      "pageName": "Student Scores Reports",
+      "url": "/backend/student_scores_report/report",
+      "description": "Generate student test scores report",
+      "formFields": [
+        {
+          "label": "Select year of graduation",
+          "type": "dropdown"
+        },
+        {
+          "label": "Select counselor or tutor",
+          "type": "dropdown"
+        },
+        {
+          "label": "Select type",
+          "type": "dropdown",
+          "options": [
+            "ACT"
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "label": "GENERATE REPORT",
+          "type": "button"
+        }
+      ]
+    },
+    {
+      "pageNumber": 14,
+      "pageName": "Evidence (BI Dashboard)",
+      "url": "/backend/evidence",
+      "description": "Business intelligence dashboards and analytics",
+      "layout": "left_sidebar_with_main_content",
+      "leftSidebar": {
+        "label": "Report Categories",
+        "categories": [
+          {
+            "categoryName": "Finance",
+            "reports": [
+              "Accounts Receivable",
+              "Chargeability Report",
+              "Payroll Export",
+              "QuickBooks Invoice Export",
+              "Resource Utilization",
+              "Revenue Dashboard",
+              "Student Services"
+            ]
+          },
+          {
+            "categoryName": "Planning",
+            "reports": [
+              "Assignment Gaps",
+              "Capacity Forecast",
+              "Capacity Planning Dashboard",
+              "Counselor Deep Dive",
+              "Hours Projection",
+              "Student Progress Tracking"
+            ]
+          },
+          {
+            "categoryName": "College Outcomes",
+            "reports": [
+              "College Applications",
+              "College Decisions",
+              "Exit Survey"
+            ]
+          },
+          {
+            "categoryName": "Service Delivery",
+            "reports": [
+              "Contact Health Report",
+              "Counselor Performance Report",
+              "Essay Coach Performance Report",
+              "Hours Overview",
+              "Task Progress Tracking",
+              "Team Performance",
+              "Tutor Dashboard"
+            ]
+          },
+          {
+            "categoryName": "Growth",
+            "reports": [
+              "Enrollment Trends",
+              "Onboarding",
+              "Retention & Churn",
+              "Sales Pipeline"
+            ]
+          },
+          {
+            "categoryName": "Operations",
+            "reports": [
+              "Former Students",
+              "HubSpot Data",
+              "Student Directory",
+              "Student Engagement"
+            ]
+          }
+        ]
+      },
+      "mainContent": {
+        "description": "Metabase-style embedded dashboards",
+        "executiveOverview": {
+          "metrics": [
+            {
+              "label": "Active Students",
+              "breakdowns": [
+                "Total",
+                "Counseling",
+                "Essay",
+                "Tutoring"
+              ]
+            },
+            {
+              "label": "Active Employees",
+              "type": "numeric"
+            },
+            {
+              "label": "Key Metrics",
+              "breakdowns": [
+                "Open Deals",
+                "Contact Health %",
+                "Students Scheduled %",
+                "YTD Chargeability %"
+              ]
+            }
+          ],
+          "charts": [
+            {
+              "name": "Monthly Hours Consumption",
+              "type": "line_chart"
+            },
+            {
+              "name": "Cash Flow Overview",
+              "type": "stacked_bar",
+              "segments": [
+                "Recurring",
+                "New",
+                "Total Revenue"
+              ]
+            },
+            {
+              "name": "Monthly Revenue Trend",
+              "type": "line_chart"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "pageNumber": 15,
+      "pageName": "Programs",
+      "url": "/backend/programs",
+      "description": "Service programs offered",
+      "totalEntries": 30,
+      "tableColumns": [
+        {
+          "name": "Name",
+          "type": "text",
+          "sortable": true
+        },
+        {
+          "name": "In Use",
+          "type": "yes_no"
+        },
+        {
+          "name": "View",
+          "type": "icon_button"
+        },
+        {
+          "name": "Edit",
+          "type": "icon_button"
+        },
+        {
+          "name": "Delete",
+          "type": "icon_button"
+        }
+      ],
+      "actions": [
+        {
+          "label": "Search",
+          "type": "search_box"
+        },
+        {
+          "label": "ADD PROGRAM",
+          "type": "button"
+        }
+      ]
+    },
+    {
+      "pageNumber": 16,
+      "pageName": "Services",
+      "url": "/backend/pfa_services",
+      "description": "Professional and service offerings",
+      "totalEntries": 236,
+      "tableColumns": [
+        {
+          "name": "Code",
+          "type": "text"
+        },
+        {
+          "name": "Name",
+          "type": "text",
+          "sortable": true
+        },
+        {
+          "name": "Price",
+          "type": "currency"
+        },
+        {
+          "name": "Type",
+          "type": "text",
+          "values": [
+            "Regular"
+          ]
+        },
+        {
+          "name": "Maximum Purchases",
+          "type": "numeric"
+        },
+        {
+          "name": "Number of Meetings",
+          "type": "numeric"
+        },
+        {
+          "name": "In Use",
+          "type": "yes_no"
+        },
+        {
+          "name": "View",
+          "type": "icon_button"
+        },
+        {
+          "name": "Edit",
+          "type": "icon_button"
+        },
+        {
+          "name": "Delete",
+          "type": "icon_button"
+        }
+      ],
+      "actions": [
+        {
+          "label": "Search",
+          "type": "search_box"
+        },
+        {
+          "label": "ADD SERVICE",
+          "type": "button"
+        }
+      ]
+    },
+    {
+      "pageNumber": 17,
+      "pageName": "Product Order",
+      "url": "/backend/admin_orders/new",
+      "pageTitle": "Program Services",
+      "description": "Create orders for program services",
+      "headerFields": [
+        {
+          "label": "Date",
+          "type": "date"
+        },
+        {
+          "label": "Sales person",
+          "type": "dropdown"
+        }
+      ],
+      "layout": "service_listing_with_calculations",
+      "serviceLineItems": [
+        {
+          "field": "Program Service name",
+          "type": "text"
+        },
+        {
+          "field": "QTY",
+          "type": "numeric_spinner",
+          "controls": [
+            "Increment (+)",
+            "Decrement (-)"
+          ]
+        },
+        {
+          "field": "Subtotal",
+          "type": "currency",
+          "calculated": true
+        }
+      ],
+      "orderCalculations": [
+        {
+          "label": "Subtotal",
+          "type": "currency"
+        },
+        {
+          "label": "Discount",
+          "type": "currency",
+          "editable": true
+        },
+        {
+          "label": "Total",
+          "type": "currency",
+          "calculated": true
+        }
+      ],
+      "paymentTerms": {
+        "label": "Monthly Payment",
+        "type": "dropdown",
+        "options": [
+          "1-time",
+          "2-months",
+          "10-months",
+          "Other options..."
+        ],
+        "calculatedAmount": "Amount based on selected term"
+      }
+    }
+  ]
+}
