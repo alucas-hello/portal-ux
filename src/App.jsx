@@ -72,7 +72,7 @@ const Icons = {
 const SAMPLE_STUDENTS = [
   {
     id: 1, firstName: "Daniela", lastName: "Aguilar Villalobos", highSchool: "Lincoln HS", state: "CA", gradYear: 2026,
-    counselor: "Lucas Austin", essayCoach: "Chris Bench", tutor: "Ian Simon", meetings: 12, lastMeeting: "01/13/26",
+    counselor: "Alex Morgan", essayCoach: "Taylor Reed", tutor: "Jamie Park", meetings: 12, lastMeeting: "01/13/26",
     nextContact: "03/08/26", nextMeeting: "03/15/26", counselorHoursUsed: 16.75, counselorHoursTotal: 19,
     essayHoursUsed: 0, essayHoursTotal: 15, tutorHoursUsed: 0, tutorHoursTotal: 10, workshops: 18,
     nextWorkshop: "NOT BOOKED", nextWorkshopDate: null, notes: "Strong student, on track with college process",
@@ -82,7 +82,7 @@ const SAMPLE_STUDENTS = [
   },
   {
     id: 2, firstName: "Madelyn", lastName: "Hart", highSchool: "Westview Academy", state: "FL", gradYear: 2026,
-    counselor: "Lucas Austin", essayCoach: "Chris Bench", tutor: "Ian Simon", meetings: 17, lastMeeting: "01/06/26",
+    counselor: "Alex Morgan", essayCoach: "Taylor Reed", tutor: "Jamie Park", meetings: 17, lastMeeting: "01/06/26",
     nextContact: "03/10/26", nextMeeting: "03/17/26", counselorHoursUsed: 19, counselorHoursTotal: 20,
     essayHoursUsed: 12, essayHoursTotal: 15, tutorHoursUsed: 5, tutorHoursTotal: 10, workshops: 33,
     nextWorkshop: "NOT BOOKED", nextWorkshopDate: null, notes: "Bought before meetings or hours",
@@ -92,7 +92,7 @@ const SAMPLE_STUDENTS = [
   },
   {
     id: 3, firstName: "Meera", lastName: "Kumar", highSchool: "North Ridge Prep", state: "NY", gradYear: 2027,
-    counselor: "Lucas Austin", essayCoach: "Chen David", tutor: "Ian Simon", meetings: 24, lastMeeting: "02/25/26",
+    counselor: "Alex Morgan", essayCoach: "Sam Okafor", tutor: "Jamie Park", meetings: 24, lastMeeting: "02/25/26",
     nextContact: "03/12/26", nextMeeting: "03/19/26", counselorHoursUsed: 26.75, counselorHoursTotal: 60,
     essayHoursUsed: 4, essayHoursTotal: 20, tutorHoursUsed: 15, tutorHoursTotal: 25, workshops: 8,
     nextWorkshop: "NOT BOOKED", nextWorkshopDate: null, notes: "Excellent student, very engaged",
@@ -102,17 +102,17 @@ const SAMPLE_STUDENTS = [
   },
   {
     id: 4, firstName: "William", lastName: "Chen", highSchool: "Eastlake HS", state: "WA", gradYear: 2026,
-    counselor: "Krebs Kevin", essayCoach: "Bench Chris", tutor: "Lauren Fogg", meetings: 8, lastMeeting: "12/15/25",
+    counselor: "Drew Soto", essayCoach: "Reed Taylor", tutor: "Riley Quinn", meetings: 8, lastMeeting: "12/15/25",
     nextContact: "03/05/26", nextMeeting: "03/15/26", counselorHoursUsed: 10, counselorHoursTotal: 15,
     essayHoursUsed: 6, essayHoursTotal: 15, tutorHoursUsed: 5, tutorHoursTotal: 10, workshops: 12,
     nextWorkshop: "College Research WS", nextWorkshopDate: "03/15/26", notes: "",
-    gender: "Male", email: "wchen@eastlake.edu", phone: "(555)234-5678", major: "Engineering",
+    gender: "Male", email: "wchen@example.com", phone: "(555)234-5678", major: "Engineering",
     gpaUnweighted: 3.7, gpaWeighted: 3.85, actComposite: 28, satTotal: 1200,
     apClasses: ["AP Calculus AB", "AP Physics"],
   },
   {
     id: 5, firstName: "Sofia", lastName: "Rodriguez", highSchool: "Memorial HS", state: "TX", gradYear: 2027,
-    counselor: "Hall Meg", essayCoach: "Bench Chris", tutor: "Lauren Fogg", meetings: 3, lastMeeting: "03/01/26",
+    counselor: "Casey Nye", essayCoach: "Reed Taylor", tutor: "Riley Quinn", meetings: 3, lastMeeting: "03/01/26",
     nextContact: "03/15/26", nextMeeting: "03/20/26", counselorHoursUsed: 4.5, counselorHoursTotal: 20,
     essayHoursUsed: 0, essayHoursTotal: 20, tutorHoursUsed: 8, tutorHoursTotal: 25, workshops: 5,
     nextWorkshop: "FAFSA Workshop", nextWorkshopDate: "03/20/26", notes: "",
@@ -122,7 +122,7 @@ const SAMPLE_STUDENTS = [
   },
   {
     id: 6, firstName: "James", lastName: "Thompson", highSchool: "Oak Park Academy", state: "IL", gradYear: 2025,
-    counselor: "Hall Meg", essayCoach: "Chen David", tutor: "Ian Simon", meetings: 30, lastMeeting: "02/28/26",
+    counselor: "Casey Nye", essayCoach: "Sam Okafor", tutor: "Jamie Park", meetings: 30, lastMeeting: "02/28/26",
     nextContact: "03/10/26", nextMeeting: null, counselorHoursUsed: 28, counselorHoursTotal: 30,
     essayHoursUsed: 18, essayHoursTotal: 20, tutorHoursUsed: 10, tutorHoursTotal: 10, workshops: 25,
     nextWorkshop: "NOT BOOKED", nextWorkshopDate: null, notes: "Completed, awaiting decision",
@@ -132,7 +132,7 @@ const SAMPLE_STUDENTS = [
   },
   {
     id: 7, firstName: "Ananya", lastName: "Patel", highSchool: "Riverside HS", state: "NJ", gradYear: 2026,
-    counselor: "Krebs Kevin", essayCoach: "Bench Chris", tutor: "Lauren Fogg", meetings: 15, lastMeeting: "02/10/26",
+    counselor: "Drew Soto", essayCoach: "Reed Taylor", tutor: "Riley Quinn", meetings: 15, lastMeeting: "02/10/26",
     nextContact: "03/08/26", nextMeeting: "03/12/26", counselorHoursUsed: 14, counselorHoursTotal: 18,
     essayHoursUsed: 8, essayHoursTotal: 15, tutorHoursUsed: 0, tutorHoursTotal: 10, workshops: 20,
     nextWorkshop: "Essay Workshop", nextWorkshopDate: "03/12/26", notes: "",
@@ -142,7 +142,7 @@ const SAMPLE_STUDENTS = [
   },
   {
     id: 8, firstName: "Jordan", lastName: "Williams", highSchool: "Crestwood Prep", state: "MA", gradYear: 2027,
-    counselor: "Hall Meg", essayCoach: "Chen David", tutor: "Ian Simon", meetings: 6, lastMeeting: "01/20/26",
+    counselor: "Casey Nye", essayCoach: "Sam Okafor", tutor: "Jamie Park", meetings: 6, lastMeeting: "01/20/26",
     nextContact: "03/12/26", nextMeeting: "03/19/26", counselorHoursUsed: 8, counselorHoursTotal: 25,
     essayHoursUsed: 0, essayHoursTotal: 20, tutorHoursUsed: 10, tutorHoursTotal: 25, workshops: 3,
     nextWorkshop: "NOT BOOKED", nextWorkshopDate: null, notes: "",
@@ -428,12 +428,12 @@ export default function PortalApp() {
                 )}
               </div>
               <div className="relative">
-                <button onClick={() => setProfileOpen(!profileOpen)} className="w-9 h-9 rounded-full flex items-center justify-center text-xs font-bold transition-opacity hover:opacity-80" style={{ backgroundColor: "#ff3467", color: "#ffffff", border: "2px solid #ffffff" }}>AL</button>
+                <button onClick={() => setProfileOpen(!profileOpen)} className="w-9 h-9 rounded-full flex items-center justify-center text-xs font-bold transition-opacity hover:opacity-80" style={{ backgroundColor: "#ff3467", color: "#ffffff", border: "2px solid #ffffff" }}>AM</button>
                 {profileOpen && (
                   <div className="absolute right-0 top-12 w-48 rounded-lg shadow-lg py-2 z-50" style={{ backgroundColor: "#ffffff", border: "1px solid #e5e0f0" }}>
                     <div className="px-4 py-2" style={{ borderBottom: "1px solid #e5e0f0" }}>
-                      <p className="text-sm font-semibold" style={{ color: "#281d51" }}>Austin Lucas</p>
-                      <p className="text-xs" style={{ color: "#b2b2b2" }}>***REMOVED***</p>
+                      <p className="text-sm font-semibold" style={{ color: "#281d51" }}>Alex Morgan</p>
+                      <p className="text-xs" style={{ color: "#b2b2b2" }}>amorgan@example.com</p>
                     </div>
                     <button className="w-full text-left px-4 py-2 text-sm hover:bg-gray-50 transition-colors" style={{ color: "#474747" }}>Profile Settings</button>
                     <button className="w-full text-left px-4 py-2 text-sm hover:bg-gray-50 transition-colors" style={{ color: "#ff3467" }}>Log Out</button>
@@ -679,11 +679,11 @@ function WorkshopsTab({ students }) {
 
 function EssayCoachTab() {
   const essayStudents = [
-    { id: 1, firstName: "Michael", lastName: "Charles", major: "Business Marketing", counselor: "Hall Meg", coach: "Bench Chris", lastMeeting: "06/18/25", nextScheduled: "03/12/26", totalMeetings: 5, hoursUsed: 6.5, hoursTotal: 10 },
-    { id: 2, firstName: "Callie", lastName: "Flanagan", major: "Pre-Med", counselor: "Krebs Kevin", coach: "Bench Chris", lastMeeting: "07/14/25", nextScheduled: "03/15/26", totalMeetings: 5, hoursUsed: 15.5, hoursTotal: 21 },
-    { id: 3, firstName: "Logan", lastName: "Hong", major: "Biomedical Engineering", counselor: "—", coach: "Bench Chris", lastMeeting: "10/18/25", nextScheduled: "03/18/26", totalMeetings: 13, hoursUsed: 22.5, hoursTotal: 24 },
-    { id: 4, firstName: "Madelyn", lastName: "Hart", major: "Undecided", counselor: "Lucas Austin", coach: "Bench Chris", lastMeeting: "01/06/26", nextScheduled: "03/12/26", totalMeetings: 8, hoursUsed: 12, hoursTotal: 15 },
-    { id: 5, firstName: "Meera", lastName: "Kumar", major: "Computer Science", counselor: "Lucas Austin", coach: "Chen David", lastMeeting: "02/15/26", nextScheduled: "03/20/26", totalMeetings: 3, hoursUsed: 4, hoursTotal: 20 },
+    { id: 1, firstName: "Michael", lastName: "Charles", major: "Business Marketing", counselor: "Casey Nye", coach: "Reed Taylor", lastMeeting: "06/18/25", nextScheduled: "03/12/26", totalMeetings: 5, hoursUsed: 6.5, hoursTotal: 10 },
+    { id: 2, firstName: "Callie", lastName: "Flanagan", major: "Pre-Med", counselor: "Drew Soto", coach: "Reed Taylor", lastMeeting: "07/14/25", nextScheduled: "03/15/26", totalMeetings: 5, hoursUsed: 15.5, hoursTotal: 21 },
+    { id: 3, firstName: "Logan", lastName: "Hong", major: "Biomedical Engineering", counselor: "—", coach: "Reed Taylor", lastMeeting: "10/18/25", nextScheduled: "03/18/26", totalMeetings: 13, hoursUsed: 22.5, hoursTotal: 24 },
+    { id: 4, firstName: "Madelyn", lastName: "Hart", major: "Undecided", counselor: "Alex Morgan", coach: "Reed Taylor", lastMeeting: "01/06/26", nextScheduled: "03/12/26", totalMeetings: 8, hoursUsed: 12, hoursTotal: 15 },
+    { id: 5, firstName: "Meera", lastName: "Kumar", major: "Computer Science", counselor: "Alex Morgan", coach: "Sam Okafor", lastMeeting: "02/15/26", nextScheduled: "03/20/26", totalMeetings: 3, hoursUsed: 4, hoursTotal: 20 },
   ];
   const essayMilestones = ["Common App PS Workshop", "PS Topic Identified", "Complete PS", "Supplemental Essay WS", "Supplemental Essay Strategy", "All Essays Reviewed"];
 
@@ -721,10 +721,10 @@ function EssayCoachTab() {
 
 function TutorTab() {
   const tutorStudents = [
-    { id: 1, firstName: "Quincy", lastName: "Ayscue", gradYear: 2027, email: "quayscue@shorecrest.org", phone: "(571)453-1373", tutors: "Ian Simon", lastSession: "12/18/25", nextSession: "—", availableHours: 8.25, scores: { gpa: 4.0 }, latestConversation: "Still meeting occasionally for EF...", notes: "Good progress, consistent" },
-    { id: 2, firstName: "Tara", lastName: "Victor", gradYear: 2026, email: "taravictor@gmail.com", phone: "(312)852-2607", tutors: "Ian Simon, Lauren Fogg", lastSession: "01/16/26", nextSession: "03/13/26", availableHours: 3.5, scores: { act: 35, sat: 1460, gpa: 4.6 }, latestConversation: "Excellent test scores", notes: "Top student, focused" },
-    { id: 3, firstName: "Meera", lastName: "Kumar", gradYear: 2027, email: "meera.kumar@email.com", phone: "(555)123-4567", tutors: "Ian Simon", lastSession: "02/20/26", nextSession: "03/10/26", availableHours: 15, scores: { sat: 1380, gpa: 3.9 }, latestConversation: "Working on SAT math prep...", notes: "Engaged learner" },
-    { id: 4, firstName: "William", lastName: "Chen", gradYear: 2026, email: "wchen@eastlake.edu", phone: "(555)234-5678", tutors: "Lauren Fogg", lastSession: "02/25/26", nextSession: "03/08/26", availableHours: 5, scores: { act: 28, gpa: 3.7 }, latestConversation: "Focusing on ACT science section", notes: "Needs consistent support" },
+    { id: 1, firstName: "Quincy", lastName: "Ayscue", gradYear: 2027, email: "qayscue@example.com", phone: "(555)453-1373", tutors: "Jamie Park", lastSession: "12/18/25", nextSession: "—", availableHours: 8.25, scores: { gpa: 4.0 }, latestConversation: "Still meeting occasionally for EF...", notes: "Good progress, consistent" },
+    { id: 2, firstName: "Tara", lastName: "Victor", gradYear: 2026, email: "tvictor@example.com", phone: "(555)852-2607", tutors: "Jamie Park, Riley Quinn", lastSession: "01/16/26", nextSession: "03/13/26", availableHours: 3.5, scores: { act: 35, sat: 1460, gpa: 4.6 }, latestConversation: "Excellent test scores", notes: "Top student, focused" },
+    { id: 3, firstName: "Meera", lastName: "Kumar", gradYear: 2027, email: "meera.kumar@email.com", phone: "(555)123-4567", tutors: "Jamie Park", lastSession: "02/20/26", nextSession: "03/10/26", availableHours: 15, scores: { sat: 1380, gpa: 3.9 }, latestConversation: "Working on SAT math prep...", notes: "Engaged learner" },
+    { id: 4, firstName: "William", lastName: "Chen", gradYear: 2026, email: "wchen@example.com", phone: "(555)234-5678", tutors: "Riley Quinn", lastSession: "02/25/26", nextSession: "03/08/26", availableHours: 5, scores: { act: 28, gpa: 3.7 }, latestConversation: "Focusing on ACT science section", notes: "Needs consistent support" },
   ];
 
   return (
@@ -759,15 +759,15 @@ function StudentDetailPage({ student, onBack }) {
   const [activeTab, setActiveTab] = useState("counselor");
 
   const conversationLog = [
-    { date: "03/01/26", employee: "Lucas Austin", type: "In-Person Meeting", subject: "College List Review", comment: "Discussed safety schools and reach schools. Student interested in engineering programs." },
-    { date: "02/25/26", employee: "Chris Bench", type: "Essay Session", subject: "Personal Statement Draft", comment: "Reviewed first draft of common app essay. Excellent narrative voice." },
-    { date: "02/15/26", employee: "Ian Simon", type: "Tutoring Session", subject: "ACT Prep - Reading", comment: "Worked on time management strategies for reading section." },
+    { date: "03/01/26", employee: "Alex Morgan", type: "In-Person Meeting", subject: "College List Review", comment: "Discussed safety schools and reach schools. Student interested in engineering programs." },
+    { date: "02/25/26", employee: "Taylor Reed", type: "Essay Session", subject: "Personal Statement Draft", comment: "Reviewed first draft of common app essay. Excellent narrative voice." },
+    { date: "02/15/26", employee: "Jamie Park", type: "Tutoring Session", subject: "ACT Prep - Reading", comment: "Worked on time management strategies for reading section." },
   ];
 
   const ycbmEvents = [
-    { type: "Counselor Meeting", date: "03/15/26", profile: "Lucas Austin", time: "2:00 PM" },
-    { type: "Essay Session", date: "03/12/26", profile: "Chris Bench", time: "3:30 PM" },
-    { type: "Tutoring Session", date: "03/10/26", profile: "Ian Simon", time: "4:00 PM" },
+    { type: "Counselor Meeting", date: "03/15/26", profile: "Alex Morgan", time: "2:00 PM" },
+    { type: "Essay Session", date: "03/12/26", profile: "Taylor Reed", time: "3:30 PM" },
+    { type: "Tutoring Session", date: "03/10/26", profile: "Jamie Park", time: "4:00 PM" },
   ];
 
   const familyMembers = [
@@ -1065,17 +1065,17 @@ function PlaceholderPage({ title, description }) {
 function TimeTrackerPage() {
   const [selectedEmployee, setSelectedEmployee] = useState("all");
   const [selectedWeek, setSelectedWeek] = useState("03/02/26");
-  const employees = ["Lucas Austin", "Chris Bench", "Ian Simon", "Lauren Fogg", "Kevin Krebs", "Meg Hall", "David Chen"];
+  const employees = ["Alex Morgan", "Taylor Reed", "Jamie Park", "Riley Quinn", "Drew Soto", "Casey Nye", "Sam Okafor"];
   const timeEntries = [
-    { date: "03/02/26", student: "Aguilar Villalobos, Daniela", type: "Counselor Session", hours: 1.0, employee: "Lucas Austin", notes: "College list review" },
-    { date: "03/02/26", student: "Hart, Madelyn", type: "Counselor Session", hours: 1.5, employee: "Lucas Austin", notes: "Application strategy" },
-    { date: "03/03/26", student: "Kumar, Meera", type: "Counselor Session", hours: 1.0, employee: "Lucas Austin", notes: "Course selection review" },
-    { date: "03/03/26", student: "Hart, Madelyn", type: "Essay Session", hours: 1.0, employee: "Chris Bench", notes: "Personal statement draft 2" },
-    { date: "03/04/26", student: "Patel, Ananya", type: "Counselor Session", hours: 0.75, employee: "Kevin Krebs", notes: "Scholarship planning" },
-    { date: "03/04/26", student: "Chen, William", type: "Tutoring Session", hours: 1.5, employee: "Lauren Fogg", notes: "ACT science prep" },
-    { date: "03/05/26", student: "Williams, Jordan", type: "Tutoring Session", hours: 1.0, employee: "Ian Simon", notes: "SAT math review" },
-    { date: "03/05/26", student: "Thompson, James", type: "Admin/Communications", hours: 0.25, employee: "Meg Hall", notes: "Decision follow-up email" },
-    { date: "03/05/26", student: "Rodriguez, Sofia", type: "Counselor Session", hours: 1.0, employee: "Meg Hall", notes: "FAFSA walkthrough" },
+    { date: "03/02/26", student: "Aguilar Villalobos, Daniela", type: "Counselor Session", hours: 1.0, employee: "Alex Morgan", notes: "College list review" },
+    { date: "03/02/26", student: "Hart, Madelyn", type: "Counselor Session", hours: 1.5, employee: "Alex Morgan", notes: "Application strategy" },
+    { date: "03/03/26", student: "Kumar, Meera", type: "Counselor Session", hours: 1.0, employee: "Alex Morgan", notes: "Course selection review" },
+    { date: "03/03/26", student: "Hart, Madelyn", type: "Essay Session", hours: 1.0, employee: "Taylor Reed", notes: "Personal statement draft 2" },
+    { date: "03/04/26", student: "Patel, Ananya", type: "Counselor Session", hours: 0.75, employee: "Drew Soto", notes: "Scholarship planning" },
+    { date: "03/04/26", student: "Chen, William", type: "Tutoring Session", hours: 1.5, employee: "Riley Quinn", notes: "ACT science prep" },
+    { date: "03/05/26", student: "Williams, Jordan", type: "Tutoring Session", hours: 1.0, employee: "Jamie Park", notes: "SAT math review" },
+    { date: "03/05/26", student: "Thompson, James", type: "Admin/Communications", hours: 0.25, employee: "Casey Nye", notes: "Decision follow-up email" },
+    { date: "03/05/26", student: "Rodriguez, Sofia", type: "Counselor Session", hours: 1.0, employee: "Casey Nye", notes: "FAFSA walkthrough" },
   ];
   const filtered = timeEntries.filter((e) => selectedEmployee === "all" || e.employee === selectedEmployee);
   const totalHours = filtered.reduce((sum, e) => sum + e.hours, 0);

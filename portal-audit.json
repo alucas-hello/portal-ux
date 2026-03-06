@@ -1,7 +1,7 @@
 {
   "appName": "HC Employee Portal",
   "auditDate": "2026-03-05",
-  "baseUrl": "https://portal.sayhellocollege.com/backend",
+  "baseUrl": "https://portal.example.com/backend",
   "globalNavigation": {
     "topBar": {
       "logo": "HC EMPLOYEE PORTAL",
@@ -483,7 +483,7 @@
         "essayCoachDropdown": {
           "type": "dropdown",
           "description": "Filter by specific essay coach",
-          "example": "Chris Bench"
+          "example": "Taylor Reed"
         },
         "gradYearTags": {
           "type": "multi_select",
@@ -564,8 +564,8 @@
         {
           "student": "Charles, Michael",
           "major": "Business Marketing/International Business/Finance/Literature Undecided",
-          "counselor": "Hall Meg",
-          "essayCoach": "Bench Chris",
+          "counselor": "Casey Nye",
+          "essayCoach": "Reed Taylor",
           "lastEssayMeeting": "06/18/25",
           "nextScheduleEssayMeeting": null,
           "totalEssayCoachMeetings": 5,
@@ -575,8 +575,8 @@
         {
           "student": "Flanagan, Callie",
           "major": "pre-med",
-          "counselor": "Krebs Kevin",
-          "essayCoach": "Bench Chris",
+          "counselor": "Drew Soto",
+          "essayCoach": "Reed Taylor",
           "lastEssayMeeting": "07/14/25",
           "nextScheduleEssayMeeting": null,
           "totalEssayCoachMeetings": 5,
@@ -587,7 +587,7 @@
           "student": "Hong, Logan",
           "major": "Biomedical Engineering",
           "counselor": null,
-          "essayCoach": "Bench Chris",
+          "essayCoach": "Reed Taylor",
           "lastEssayMeeting": "10/18/25",
           "nextScheduleEssayMeeting": null,
           "totalEssayCoachMeetings": 13,
@@ -610,7 +610,7 @@
         "tutorDropdown": {
           "type": "dropdown",
           "description": "Filter by specific tutor",
-          "example": "Ian Simon"
+          "example": "Jamie Park"
         },
         "gradYearTags": {
           "type": "multi_select",
@@ -684,9 +684,9 @@
         {
           "student": "Ayscue, Quincy",
           "year": "2027",
-          "email": "quayscue@shorecrest.org",
+          "email": "qayscue@example.com",
           "phone": "+1(571)453-1373",
-          "tutor": "Ian Simon",
+          "tutor": "Jamie Park",
           "lastSession": "12/18/25",
           "nextSession": null,
           "availableHours": "8.25",
@@ -701,7 +701,7 @@
           "year": "2026",
           "email": "taravictor@gmail.com",
           "phone": "+1(312)852-2607",
-          "tutor": "Ian Simon+Lauren Fogg",
+          "tutor": "Jamie Park+Riley Quinn",
           "lastSession": "01/16/26",
           "nextSession": "03/13/26",
           "availableHours": "3.5",
