@@ -1458,7 +1458,7 @@ export default function StudentPortal({ student, onExit }) {
     <div className="flex flex-col h-screen" style={{ backgroundColor: "#f8f7fc" }}>
       {/* Impersonation banner */}
       <div className="px-6 py-1.5 flex items-center justify-center gap-3 text-sm" style={{ backgroundColor: "#ff3467", color: "white" }}>
-        <span>You (<strong>***REMOVED***</strong>) are impersonating <strong>{student.firstName.toLowerCase()}{student.lastName[0].toLowerCase()}@icloud.com</strong></span>
+        <span>You (<strong>alucas@sayhellocollege.com</strong>) are impersonating <strong>{student.firstName.toLowerCase()}{student.lastName[0].toLowerCase()}@icloud.com</strong></span>
         <button onClick={onExit} className="px-3 py-0.5 rounded text-xs font-bold border border-white bg-white" style={{ color: "#ff3467" }}>REVERT TO ADMIN</button>
       </div>
 

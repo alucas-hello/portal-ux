@@ -404,7 +404,7 @@ export default function PortalApp() {
                   <div className="absolute right-0 top-12 w-48 rounded-lg shadow-lg py-2 z-50" style={{ backgroundColor: "#ffffff", border: "1px solid #e5e0f0" }}>
                     <div className="px-4 py-2" style={{ borderBottom: "1px solid #e5e0f0" }}>
                       <p className="text-sm font-semibold" style={{ color: "#281d51" }}>Austin Lucas</p>
-                      <p className="text-xs" style={{ color: "#b2b2b2" }}>***REMOVED***</p>
+                      <p className="text-xs" style={{ color: "#b2b2b2" }}>alucas@sayhellocollege.com</p>
                     </div>
                     <button className="w-full text-left px-4 py-2 text-sm hover:bg-gray-50 transition-colors" style={{ color: "#474747" }}>Profile Settings</button>
                     <button className="w-full text-left px-4 py-2 text-sm hover:bg-gray-50 transition-colors" style={{ color: "#ff3467" }}>Log Out</button>
